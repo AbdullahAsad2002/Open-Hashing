@@ -23,11 +23,8 @@ void insertValue(int x, HNode *HT[], int HS)
         struct HNode *temp = new HNode(x);
         struct HNode *th;
         th = HT[HI];
-        while (th->next != NULL)
-        {
-            th = th->next;
-        }
-        th->next = temp;
+        HT[HI]=temp;
+        HT[HI]->next = th;
     }
 }
 bool searchInHT(struct HNode *HT[], int HS, int x)
