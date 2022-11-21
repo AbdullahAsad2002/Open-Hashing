@@ -83,7 +83,8 @@ int main()
     int HS;
     cout << "Enter the Size of Hash Table :";
     cin >> HS;
-    struct HNode *HT[HS];
+    //struct HNode *HT[HS];
+    struct HNode **HT = new HNode*[HS];
     for (int i = 0; i < HS; i++)
     {
         HT[i] = NULL;
@@ -134,5 +135,6 @@ int main()
             cout<<"Enter proper option Number "<<endl;
         }
     } while (option !=0);
+    delete(HT);
     return 0;
 }
